@@ -62,6 +62,46 @@ app.post("/ip",async (req,res) => {
     }
 })
 
+app.get("/domain", async (req,res) => {
+    try{
+        const response = await axios.get(API_URL + "whois?addr=google.com");
+        var content = response.data;
+
+        res.render("domain.ejs",{
+            domain:content.domain,
+            registrar:content.registrar,
+            registrant:content.registrant,
+            administrative:content.administrative,
+            technical:content.technical
+        });
+    } catch (error){
+        console.log(error);
+        res.status(500);
+    }
+})
+
+app.post("/domain",async (req,res) => {
+    const whoisDomain = req.body.whoisDomain;
+
+    try{
+        const response = await axios.get(API_URL + "whois?addr=" + whoisDomain);
+        var content = response.data;
+
+        console.log("Domain Whois: " + JSON.stringify(content));
+
+        res.render("domain.ejs",{
+            domain:content.domain,
+            registrar:content.registrar,
+            registrant:content.registrant,
+            administrative:content.administrative,
+            technical:content.technical
+        });
+    } catch (error){
+        console.log(error);
+        res.status(500);
+    }
+})
+
 app.listen(port,() => {
     console.log(`Server is running on ${port}`);
 })
