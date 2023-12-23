@@ -1,5 +1,51 @@
 <%- include("partials/header.ejs") %>
 
+<div class="px-4 py-1 my-1 text-center">
+    
+    <h1 class="display-5 fw-bold text-body-emphasis">Email Validation</h1>
+  </div>
 
+  <div class="container col-xl-10 col-xxl-8 px-4 py-2">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-md-10 mx-auto col-lg">
+        <form action="/email#results" method="POST" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" name="whoisEmail" placeholder="example@gmail.com">
+            <label for="floatingInput">Email</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5" id="results">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h2 class="fw-bold lh-1 text-body-emphasis"></span> <%= email.username + "@" + email.hostname %> results:</h2>
+        <br>
+        <p class="lead">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% for (const [key, value] of Object.entries(email)) { %>
+                        <tr>
+                            <td><%= key %></td>
+                            <td><%= value %></td>
+                          </tr>
+                   <%   } %>
+                </tbody>
+              </table>
+            <br>
+Completed succesfully.</p>
+
+      </div>
+    </div>
+  </div>
 
 <%- include("partials/footer.ejs") %>

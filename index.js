@@ -102,6 +102,38 @@ app.post("/domain",async (req,res) => {
     }
 })
 
+app.get("/email", async (req,res) => {
+    try{
+        const response = await axios.get(API_URL + "email?addr=example@gmail.com");
+        var email = response.data;
+
+        res.render("email.ejs",{
+            email:email
+        });
+    } catch (error){
+        console.log(error);
+        res.status(500);
+    }
+})
+
+app.post("/email",async (req,res) => {
+    const whoisEmail = req.body.whoisEmail;
+
+    try{
+        const response = await axios.get(API_URL + "email?addr=" + whoisEmail);
+        var email = response.data;
+
+        console.log("Email Validation: " + JSON.stringify(email));
+
+        res.render("email.ejs",{
+            email:email
+        });
+    } catch (error){
+        console.log(error);
+        res.status(500);
+    }
+})
+
 app.listen(port,() => {
     console.log(`Server is running on ${port}`);
 })
