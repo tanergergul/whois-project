@@ -2,16 +2,16 @@
 
 <div class="px-4 py-1 my-1 text-center">
     
-    <h1 class="display-5 fw-bold text-body-emphasis">Email Validation</h1>
+    <h1 class="display-5 fw-bold text-body-emphasis">Get DNS Records</h1>
   </div>
 
   <div class="container col-xl-10 col-xxl-8 px-4 py-2">
     <div class="row align-items-center g-lg-5 py-5">
       <div class="col-md-10 mx-auto col-lg">
-        <form action="/email#results" method="POST" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+        <form action="/dns#results" method="POST" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" name="whoisEmail" placeholder="example@gmail.com" required>
-            <label for="floatingInput">Email</label>
+            <input type="domain" class="form-control" id="floatingInput" name="whoisDNS" placeholder="google.com" required>
+            <label for="floatingInput">Domain</label>
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit">Search</button>
         </form>
@@ -22,8 +22,8 @@
   <div class="container my-5" id="results">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <% if(locals.email){ %>
-        <h2 class="fw-bold lh-1 text-body-emphasis"></span> <%= email.username + "@" + email.hostname %> results:</h2>
+        <% if (locals.dns) { %>
+        <h2 class="fw-bold lh-1 text-body-emphasis"></span> <%= dns.domain %> results:</h2>
         <br>
         <p class="lead">
             <table class="table">
@@ -34,7 +34,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <% for (const [key, value] of Object.entries(email)) { %>
+                    <% for (const [key, value] of Object.entries(dns)) { %>
                         <tr>
                             <td><%= key %></td>
                             <td><%= value %></td>
@@ -45,9 +45,9 @@
             <br>
 Completed succesfully.</p>
 <% } else { %>
-  <p class="lead">
-    API Error, please check server error log.
-  </p>
+    <p class="lead">
+        API Error, please check server error log.
+    </p>
 <% } %>
       </div>
     </div>

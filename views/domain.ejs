@@ -11,7 +11,7 @@
                 <form action="/domain#results" method="POST" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
                     <div class="form-floating mb-3">
                         <input type="domain" class="form-control" id="floatingInput" name="whoisDomain"
-                            placeholder="google.com">
+                            placeholder="google.com" required>
                         <label for="floatingInput">Domain</label>
                     </div>
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Search</button>
@@ -23,7 +23,7 @@
     <div class="container my-5" id="results">
         <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
             <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <% if (domain) { %>
+                <% if (locals.domain) { %>
                 <h2 class="fw-bold lh-1 text-body-emphasis"></span>
                     <%= domain.name + "." + domain.extension %> results:
                 </h2>
@@ -53,7 +53,7 @@
                     </tbody>
                 </table>
                 <% } else { %>
-                <h3>Unsupported TLD</h3>
+                <h3>Result not found.</h3>
                 <% }%>
                 <% if (locals.registrar) {%>
                 <br>

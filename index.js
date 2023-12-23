@@ -76,7 +76,7 @@ app.get("/domain", async (req,res) => {
         });
     } catch (error){
         console.log(error);
-        res.status(500);
+        res.render("domain.ejs");
     }
 })
 
@@ -98,7 +98,7 @@ app.post("/domain",async (req,res) => {
         });
     } catch (error){
         console.log(error);
-        res.status(500);
+        res.render("domain.ejs");
     }
 })
 
@@ -112,7 +112,7 @@ app.get("/email", async (req,res) => {
         });
     } catch (error){
         console.log(error);
-        res.status(500);
+        res.render("email.ejs");
     }
 })
 
@@ -130,7 +130,39 @@ app.post("/email",async (req,res) => {
         });
     } catch (error){
         console.log(error);
-        res.status(500);
+        res.render("email.ejs");
+    }
+})
+
+app.get("/dns", async (req,res) => {
+    try{
+        const response = await axios.get(API_URL + "dns?addr=google.com");
+        var dns = response.data;
+
+        res.render("dns.ejs",{
+            dns:dns
+        });
+    } catch (error){
+        console.log(error);
+        res.render("dns.ejs");
+    }
+})
+
+app.post("/dns",async (req,res) => {
+    const whoisDNS = req.body.whoisDNS;
+
+    try{
+        const response = await axios.get(API_URL + "dns?addr=" + whoisDNS);
+        var dns = response.data;
+
+        console.log("DNS Records: " + JSON.stringify(dns));
+
+        res.render("dns.ejs",{
+            dns:dns
+        });
+    } catch (error){
+        console.log(error);
+        res.render("dns.ejs");
     }
 })
 
