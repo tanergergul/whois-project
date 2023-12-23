@@ -191,15 +191,15 @@ Project Link: [https://github.com/tanergergul/whois-project](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/tanergergul/whois-project.svg?style=for-the-badge
 [contributors-url]: https://github.com/tanergergul/whois-project/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/tanergergul/whois-project.svg?style=for-the-badge
 [forks-url]: https://github.com/tanergergul/whois-project/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/tanergergul/whois-project.svg?style=for-the-badge
 [stars-url]: https://github.com/tanergergul/whois-project/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/tanergergul/whois-project.svg?style=for-the-badge
 [issues-url]: https://github.com/tanergergul/whois-project/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/tanergergul/whois-project.svg?style=for-the-badge
 [license-url]: https://github.com/tanergergul/whois-project/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/tanergergul
