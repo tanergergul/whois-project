@@ -2,6 +2,7 @@ import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 import morgan from "morgan";
+import requestIp from "request-ip";
 
 const app = express();
 const port = 3000;
@@ -13,10 +14,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 app.get("/", async (req,res) => {
-    userIP = "1.1.1.1";
+    userIP = requestIp.getClientIp(req); 
 
-    if(req.socket.remoteAddress != "::1"){
-        userIP = req.socket.remoteAddress;
+    if(userIP == "::1"){
+        userIP = "1.1.1.1"; // for dev enviroment
     }
 
     try{
@@ -35,10 +36,10 @@ app.get("/", async (req,res) => {
 })
 
 app.get("/ip", async (req,res) => {
-    userIP = "1.1.1.1";
+    userIP = requestIp.getClientIp(req); 
 
-    if(req.socket.remoteAddress != "::1"){
-        userIP = req.socket.remoteAddress;
+    if(userIP == "::1"){
+        userIP = "1.1.1.1"; // for dev enviroment
     }
 
     try{
