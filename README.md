@@ -39,7 +39,7 @@
     <a href="https://github.com/tanergergul/whois-project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tanergergul/whois-project">View Demo</a>
+    <a href="https://whois-project.onrender.com">View Demo</a>
     ·
     <a href="https://github.com/tanergergul/whois-project/issues">Report Bug</a>
     ·
