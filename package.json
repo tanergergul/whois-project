@@ -15,7 +15,7 @@
   "author": "Taner Gergül",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.2",
+    "axios": "^1.7.4",
     "body-parser": "^1.20.3",
     "ejs": "^3.1.9",
     "express": "^4.21.1",
